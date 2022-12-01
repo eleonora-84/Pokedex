@@ -1,5 +1,7 @@
+import persistance.util.DatabaseConnector;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        DatabaseConnector.getConnection();
     }
 }
