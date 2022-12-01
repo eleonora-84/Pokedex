@@ -10,9 +10,11 @@ import persistance.util.DatabaseConnector;
 
 public class PokemonDAOimpl implements PokemonDAO {
 
+    Connection connection = DatabaseConnector.getConnection();
+
+
   @Override
   public Pokemon createPokemon(Pokemon newPokemon) {
-    Connection connection = DatabaseConnector.getConnection();
 
     try {
       // Nota: si parte da 1 e non da 0
@@ -36,8 +38,7 @@ public class PokemonDAOimpl implements PokemonDAO {
 
   @Override
   public Pokemon getPokemonByID(int id) {
-    Connection connection = DatabaseConnector.getConnection();
-
+    
     try {
       PreparedStatement preparedStatement = connection.prepareStatement(
         SqlQueryStorage.getPokemonByID
@@ -85,14 +86,52 @@ public class PokemonDAOimpl implements PokemonDAO {
   }
 
   @Override
-  public Pokemon updatePokemon() {
-    // TODO Auto-generated method stub
-    return null;
+  public Pokemon updatePokemon(Pokemon newPokemon) {
+    try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SqlQueryStorage.updatePokemon);
+            preparedStatement.setString(1, newPokemon.getName());
+            preparedStatement.setString(2, newPokemon.getElementType());
+            preparedStatement.setInt(3, newPokemon.getLevel());
+
+            preparedStatement.setInt(4, newPokemon.getId());
+
+            int rowUpdate = preparedStatement.executeUpdate();
+
+            System.out.println("LOG: Aggiornamento di " + rowUpdate + " pokemon avvenuto con successo");
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+    return newPokemon;
   }
 
   @Override
-  public void deletePokemon() {
-    // TODO Auto-generated method stub
+  public void deletePokemonByID(int id) {
 
+    try {
+        PreparedStatement preparedStatement = connection.prepareStatement(SqlQueryStorage.deletePokemonByID);
+        
+        preparedStatement.setInt(1, id);
+
+        int rowDelete = preparedStatement.executeUpdate();
+
+        System.out.println("LOG: Cancellazione di " + rowDelete + " pokemon avvenuto con successo");
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+  }
+
+  @Override
+  public void closeConnection(){
+    try {
+        connection.close();
+        System.out.println("Connessione chiusa");
+    } catch (SQLException e) {
+
+        e.printStackTrace();
+    }
   }
 }

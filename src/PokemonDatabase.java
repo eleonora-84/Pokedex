@@ -25,4 +25,15 @@ public class PokemonDatabase {
     public ArrayList<Pokemon> getAllPokemon() {
         return pokemonDAO.getAllPokemon();
     }
+
+    public Pokemon updatePokemon(Pokemon pokemon) {
+        return pokemonDAO.updatePokemon(pokemon);
+    }
+
+    public void deletePokemonByID(int id){
+        pokemonDAO.deletePokemonByID(id);
+    }
+    public void closeConnection(){
+        pokemonDAO.closeConnection();
+    }
 }
