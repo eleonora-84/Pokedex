@@ -14,7 +14,12 @@ public class Pokemon {
     this.level = level;
   }
 
-  public Pokemon() {}
+  @Override
+public String toString() {
+    return "Pokemon [id=" + id + ", name=" + name + ", elementType=" + elementType + ", level=" + level + "]";
+}
+
+public Pokemon() {}
 
   public Pokemon(String name, String elementType, int level) {
     this.name = name;

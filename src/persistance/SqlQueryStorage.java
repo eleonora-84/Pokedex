@@ -6,5 +6,7 @@ public class SqlQueryStorage {
 
     //DML
     public static final String insertPokemon = "INSERT INTO `Pokedex`.`Pokemon` (`name`, `elementType`, `level`) VALUES (?, ?, ?);";
+    public static final String getPokemonByID = "SELECT * FROM `Pokedex`.`Pokemon` WHERE id = ?";
+    public static final String getAllPokemon = "SELECT * FROM `Pokedex`.`Pokemon`";
 
 }

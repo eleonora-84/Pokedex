@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import model.Pokemon;
 import model.PokemonDAO;
 import model.PokemonDAOimpl;
@@ -12,8 +14,15 @@ public class PokemonDatabase {
         pokemonDAO = new PokemonDAOimpl();
     }
 
-    public Pokemon addPokemon(Pokemon pokemon) {
+    public Pokemon createPokemon(Pokemon pokemon) {
         return pokemonDAO.createPokemon(pokemon);
     }
-    
+
+    public void getPokemonByID(int id) {
+        pokemonDAO.getPokemonByID(id);
+    }
+
+    public ArrayList<Pokemon> getAllPokemon() {
+        return pokemonDAO.getAllPokemon();
+    }
 }

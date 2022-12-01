@@ -6,7 +6,7 @@ public interface PokemonDAO {
     
     //CRUD - create - read - update - delete
     public Pokemon createPokemon(Pokemon newPokemon);
-    public Pokemon getPokemonByID();
+    public Pokemon getPokemonByID(int id);
     public ArrayList<Pokemon> getAllPokemon();
     public Pokemon updatePokemon();
     public void deletePokemon();
