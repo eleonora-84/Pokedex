@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import persistance.util.DatabaseConnector;
+import persistance.util.SqlQueryStorage;
 
 public class DatabaseManager {
 
@@ -19,6 +20,9 @@ public class DatabaseManager {
       st.executeUpdate(SqlQueryStorage.createPokemonTable);
 
       System.out.println("LOG: Tabelle create");
+
+      connection.close();
+
     } catch (SQLException e) {
       e.printStackTrace();
     }

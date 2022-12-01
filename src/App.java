@@ -1,3 +1,4 @@
+import model.ConvertPokemon;
 import model.Pokemon;
 
 public class App {
@@ -35,6 +36,7 @@ public class App {
         
         pokemonDB.closeConnection();
         
+        ConvertPokemon.convertFromList2Array();
     
      
     }

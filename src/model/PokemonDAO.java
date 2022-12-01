@@ -8,6 +8,7 @@ public interface PokemonDAO {
     public Pokemon createPokemon(Pokemon newPokemon);
     public Pokemon getPokemonByID(int id);
     public ArrayList<Pokemon> getAllPokemon();
+    
     public Pokemon updatePokemon(Pokemon newPokemon);
     public void deletePokemonByID(int id);
     public void closeConnection();
