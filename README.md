@@ -1,8 +1,8 @@
-### Pokedex
+# Pokedex
 
 ## Digitazon Tech School
 
-# ESERCIZIO 1 
+### ESERCIZIO 1 
 
 Progettare una base di dati per gestire i Pokèmon presenti nella città di Biancavilla, composta dalla seguente tabella. 
 
@@ -11,7 +11,7 @@ pokemon(int id, string name, string elementType, int level).
 Creare un progetto Java che consenta tramite JDBC e driver per MySQL di struttura interfaccia DAO e i metodi per le CRUD base. 
 
 
-# ESERCIZIO 2 
+### ESERCIZIO 2 
 
 + Utilizzando il codice scritto in precedenza, scrivere un metodo statico chiamato "convertFromList2Array" che dato un ArrayList lo converte in un array di interi con gli indici che sono stati letti da un database. 
 
