@@ -6,11 +6,10 @@ import persistance.DatabaseManager;
 
 public class PokemonDatabase {
 
-  private DatabaseManager databaseManager;
   private PokemonDAO pokemonDAO;
 
   public PokemonDatabase() {
-    databaseManager = new DatabaseManager();
+    new DatabaseManager();
     pokemonDAO = new PokemonDAOimpl();
   }
 

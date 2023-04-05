@@ -31,7 +31,7 @@ public class PokemonDAOimpl implements PokemonDAO {
       int rowInserted = preparedStatement.executeUpdate();
 
       System.out.println(
-        "LOG: Inserimento di " + rowInserted + " avvenuto con successo"
+        "LOG: Inserimento di " + rowInserted + " pokemon avvenuto con successo"
       );
     } catch (SQLException e) {
       e.printStackTrace();
