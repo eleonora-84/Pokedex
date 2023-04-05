@@ -2,7 +2,6 @@ ESERCIZIO 1
 
 Progettare una base di dati per gestire i Pokèmon presenti nella città di Biancavilla, composta dalla seguente tabella. 
 
-
 pokemon(int id, string name, string elementType, int level). 
 
 Creare un progetto Java che consenta tramite JDBC e driver per MySQL di struttura interfaccia DAO e i metodi per le CRUD base. 
